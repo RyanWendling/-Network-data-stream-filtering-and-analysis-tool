@@ -76,24 +76,24 @@ screen should be cleared and redrawn
 -strlnpxeol on:   strip non-printable characters moving from right to left except CR and LF   
 -strlnpxeol off:   turn off strlnpxeol   
 -Log commands:  
--loglrpre fn:   log left to right traffic before any filtering to file with name fn
--loglrpreoff:   turn off loglrpre
--logrlpre fn:   log right to left traffic before any filtering to file with name fn
--logrlpreoff:   turn off logrlpre
--loglrpost fn:   log left to right traffic after any filtering to file with name fn
--loglrpostoff:   turn off loglrpost
--logrlpost fn:   log right to left traffic after any filtering to file with name fn
--logrlpostoff:   turn off logrlpost
+-loglrpre fn:   log left to right traffic before any filtering to file with name fn  
+-loglrpreoff:   turn off loglrpre  
+-logrlpre fn:   log right to left traffic before any filtering to file with name fn  
+-logrlpreoff:   turn off logrlpre  
+-loglrpost fn:   log left to right traffic after any filtering to file with name fn  
+-loglrpostoff:   turn off loglrpost  
+-logrlpost fn:   log right to left traffic after any filtering to file with name fn  
+-logrlpostoff:   turn off logrlpost  
 -source [scriptin]:   The script file scriptin is read. The characters in the file are interpreted as if you had typed them. If the end of the file is reached before the program is told to exit (with a quit command) , further characters are read from the keyboard. If the file name is not specified the program attempts to open a file with the name “scriptin.”    
--External filter:
--extlr command
--extrl command
--extlroff
--extrloff
+-External filter:  
+-extlr command  
+-extrl command  
+-extlroff  
+-extrloff  
 
 
--We use the "select" function for our non-blocking i/o. It will look at our three file descriptors and safely read from them, knowing we will recieve more data and not be blocked waiting for input to arrive.
+-We use the "select" function for our non-blocking i/o. It will look at our three file descriptors and safely read from them, knowing we will recieve more data and not be blocked waiting for input to arrive.  
 
--The ncurses GUI seperates our terminal window into 5 boxes with which to display the transfer of information. The upper left box shows data entering from the left side. The upper right box shows data leaving out the right side, the lower left box shows data leaving out the left side. The lower right box shows data entering from the right side. The final bottom box is where the user enters commands, data entry, and shows error reporting.
+-The ncurses GUI seperates our terminal window into 5 boxes with which to display the transfer of information. The upper left box shows data entering from the left side. The upper right box shows data leaving out the right side, the lower left box shows data leaving out the left side. The lower right box shows data entering from the right side. The final bottom box is where the user enters commands, data entry, and shows error reporting.  
 
--Other tech used was the cbreak() mode, echo /noecho mode,
+-Other tech used was the cbreak() mode, echo /noecho mode,  
